@@ -43,6 +43,15 @@ You will have probably have a line in your requirements file that has your proje
     You can only use packages that can be installed from pypi. If you have any others that you checked out via git, or locally you will have to include these in your ``run`` file (see below). Never include these editable references when deploying to heroku.
 
 
+``runtime.txt``:
+
+If your app use Python 3 generate this file with the following:
+
+.. code-block:: bash
+
+    $ echo "python-3.3.2" > runtime.txt
+    
+
 ``Procfile``:
 
 Generate this by running:
@@ -129,6 +138,11 @@ Step 3: Initialize the heroku stack
 .. code-block:: bash
     
     $ heroku create --stack cedar
+    
+Or if you live in Europe:
+
+    $ heroku create --stack cedar --region eu
+
 
 Step 4: Deploy
 ==============
